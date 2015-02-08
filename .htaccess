@@ -1,0 +1,4 @@
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www.dragonlasers\.ru$ [NC]
+RewriteRule ^(.*)$ http://dragonlasers.ru/$1 [R=301,L]

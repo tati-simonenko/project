@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<link rel="stylesheet" href="css/reset.css"/>
+	<link rel="stylesheet" href="css/main.css"/>
+	
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300&subset=cyrillic-ext,latin' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/modal.js"></script>
+	<!--<script src="js/slider.js"></script>
+	<script src="js/navigation_position.js"></script>-->
+	<script src="js/iframe.js"></script>
+    <script src="js/jPages.js" type="text/javascript"></script>
+	
+	<title>LASER</title>
+</head>
+<body>
+<!-- MODAL -->
+<div id="modal_ask" class="modal_window"> 
+    <form action="php/ask.php" class="send_order">
+		<p>Вы можете задать вопрос онлайн:</p>
+		<input name="name" type="text" placeholder="Имя"/>
+		<input name="phone" type="text" placeholder="Телефон"/>
+		<textarea name="message" placeholder="Сообщение"></textarea>
+		<input type="submit"/>
+	</form>
+</div>
+<div id="modal_order" class="modal_window"> 
+    <form action="php/ask.php" class="send_order">
+		<p>Вы можете оставить заявку:</p>
+		<input name="name" type="text" placeholder="Имя"/>
+		<input name="phone" type="text" placeholder="Телефон"/>
+		<textarea name="message" placeholder="Сообщение"></textarea>
+		<input type="submit"/>
+	</form>
+</div>
+<div id="successful_sending" class="modal_window"> 
+<div class="close_modal"></div>
+<p class="successful_sending_header">Наш специалист свяжется с Вами в течении 10 минут.</p>
+<p>Время работы нашей компании с 9 до 22 по Москвоскому времени</p>
+<a href="#" class="close_modal continue">Продолжить покупки</a>
+</div>
+<div id="modal_laser" class="modal_window">
+	<div class="half_modal">
+		<div class="modal_gallery" id="modal_gallery">
+			<div id="modal_arr_left" class="modal_arr"></div>
+			<div id="modal_arr_right" class="modal_arr"></div>
+			<img src="images/laser_photo_1.jpg" alt="laser_photo_1" class="visible_img"/>
+			<img src="images/laser_photo_1.jpg" alt="laser_photo_1" class="hidden_img"/>
+			<img src="images/laser_photo_2.jpg" alt="laser_photo_2" class="hidden_img"/>
+			<img src="images/laser_photo_3.jpg" alt="laser_photo_3" class="hidden_img"/>
+			<img src="images/laser_photo_4.jpg" alt="laser_photo_4" class="hidden_img"/>
+		</div>
+		<div class="modal_about_laser">
+			<ul class="select_div" id="modal_view">
+				<li class="active" data-view="modal_laser_description">Описание</li>
+				<li data-view="modal_laser_video">Видео</li>
+				<li data-view="modal_laser_characteristics">Характеристики</li>
+			</ul>
+			<div id="modal_laser_description" class="modal_laser_description active">
+				<p>Описание описание описание</p>
+				<p>Описание описание описание</p>
+			</div>
+			<div id="modal_laser_video" class="modal_laser_video">
+				<iframe class="modal_iframe" width="853" height="480" src="http://www.youtube.com/embed/7dJPldxV3iM?rel=0" frameborder="0" allowfullscreen></iframe>
+			</div>
+			<table id="modal_laser_characteristics" class="modal_laser_characteristics">
+				<tr>
+					<td>Заголовок</td>
+					<td>Характеристика</td>
+				</tr>
+				<tr>
+					<td>Заголовок</td>
+					<td>Характеристика</td>
+				</tr>
+				<tr>
+					<td>Заголовок</td>
+					<td>Характеристика</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="half_modal">
+		<p class="modal_title">ЗЕЛЕНАЯ ЛАЗЕРНАЯ УКАЗКА POWER 303 МОЩНОСТЬЮ 300мВт</p>
+		<p class="modal_subtitle">Мощый, компактный, универсальный. Зарядное устройство и аккумулятор в комплекте. Жгет спички.</p>
+		<div class="item_form">
+			<form action="php/form.php" class="send_order closed">
+				<div class='clear'>
+					<p class="item_price" id="modal_item_price">2790</p>
+					<p id="modal_accessories">Добавить аксессуары</p>
+					<ul>
+						<li>
+							<label for="modal_checkbox1" data-price="350">Аккумулятор * 1 шт (+350 Р)</label>
+							<input id='modal_checkbox1' type="checkbox" name="battery"/>
+						</li>
+						<li>
+							<label for="modal_checkbox2" data-price="550">Штатив * 1 шт (+550 Р)</label>
+							<input id='modal_checkbox2' type="checkbox" name="tripod"/>
+						</li>
+						<li>
+							<label for="modal_checkbox3" data-price="500">Очки защит * 1 шт (+500 Р)</label>
+							<input id='modal_checkbox3' type="checkbox" name="goggles"/>
+						</li>
+						<li>
+							<label for="modal_checkbox4" data-price="800">Расширители * 1 шт (+800 Р)</label>
+							<input id='modal_checkbox4' type="checkbox" name="expanders"/>
+						</li>
+					</ul>
+				</div>
+				<input type="text" value="ЗЕЛЕНАЯ ЛАЗЕРНАЯ УКАЗКА POWER 303 МОЩНОСТЬЮ 300мВт" class="hidden_input" name="item_name" />
+				<input type="text" value="2790" class="hidden_input" name="original_price" />
+				<input type="text" value="2790" class="hidden_input" id="modal_total_cost" name="total_cost" />
+				<div class="inputs">
+					<p>Чтобы заказать, заполните форму:</p>
+					<input type="text" placeholder="Введите ваше имя:" name="name"/>
+					<input type="text" placeholder="Номер телефона:" name="phone"/>
+					<input type="submit"/>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div id="overlay"></div>
+<!-- END MODAL -->
+<div class="container">
+	<header>
+		<a href="index.html" class="logo">
+			<img src="images/logo.png" alt="logo"/>
+		</a>
+		<div class="callback">
+			<p>8 (800) 555-41-80</p>
+			<a href="#" class="modal_ask">Заказать обратный звонок</a>
+		</div>
+	</header>
+</div>
+<nav id="nav">
+	<div class="container">
+		<ul>
+			<li><a href="#green_lasers" class="to_scroll">Зеленые<span> лазеры</span></a>
+				<div class="dropdown">
+					<div class="one_laser">
+						<img src="images/laser.jpg" alt="laser"/>
+						<a href="#" class="modal modal_laser">modal window</a>
+						<a href="#" class="detail">Подробнее</a>
+						<a href="#" class="laser_description">
+							<p class="name">Power Laser - 300mW</p>
+							<p class="price">4 590 Р</p>
+						</a>
+					</div>
+					<div class="one_laser">
+						<img src="images/laser.jpg" alt="laser"/>
+						<a href="#" class="modal modal_laser">modal window</a>
+						<a href="#" class="detail">Подробнее</a>
+						<a href="#" class="laser_description">
+							<p class="name">Power Laser - 300mW</p>
+							<p class="price">4 590 Р</p>
+						</a>
+					</div>
+					<div class="one_laser">
+						<img src="images/laser.jpg" alt="laser"/>
+						<a href="#" class="modal modal_laser">modal window</a>
+						<a href="#" class="detail">Подробнее</a>
+						<a href="#" class="laser_description">
+							<p class="name">Power Laser - 300mW</p>
+							<p class="price">4 590 Р</p>
+						</a>
+					</div>
+					<div class="one_laser">
+						<img src="images/laser.jpg" alt="laser"/>
+						<a href="#" class="modal modal_laser">modal window</a>
+						<a href="#" class="detail">Подробнее</a>
+						<a href="#" class="laser_description">
+							<p class="name">Power Laser - 300mW</p>
+							<p class="price">4 590 Р</p>
+						</a>
+					</div>
+				</div>
+			</li>
+			<li><a href="#red_lasers" class="to_scroll">Красные<span> лазеры</span></a>
+				<div class="dropdown">
+					<div class="one_laser">
+						<img src="images/laser.jpg" alt="laser"/>
+						<a href="#" class="modal modal_laser">modal window</a>
+						<a href="#" class="detail">Подробнее</a>
+						<a href="#" class="laser_description">
+							<p class="name">Power Laser - 300mW</p>
+							<p class="price">4 590 Р</p>
+						</a>
+					</div>
+					<div class="one_laser">
+						<img src="images/laser.jpg" alt="laser"/>
+						<a href="#" class="modal modal_laser">modal window</a>
+						<a href="#" class="detail">Подробнее</a>
+						<a href="#" class="laser_description">
+							<p class="name">Power Laser - 300mW</p>
+							<p class="price">4 590 Р</p>
+						</a>
+					</div>
+					<div class="one_laser">
+						<img src="images/laser.jpg" alt="laser"/>
+						<a href="#" class="modal modal_laser">modal window</a>
+						<a href="#" class="detail">Подробнее</a>
+						<a href="#" class="laser_description">
+							<p class="name">Power Laser - 300mW</p>
+							<p class="price">4 590 Р</p>
+						</a>
+					</div>
+				</div>
+			</li>
+			<li><a href="#blue_lasers" class="to_scroll">Синие<span> лазеры</span></a>
+				<div class="dropdown">
+					<div class="one_laser">
+						<img src="images/laser.jpg" alt="laser"/>
+						<a href="#" class="modal modal_laser">modal window</a>
+						<a href="#" class="detail">Подробнее</a>
+						<a href="#" class="laser_description">
+							<p class="name">Power Laser - 300mW</p>
+							<p class="price">4 590 Р</p>
+						</a>
+					</div>
+					<div class="one_laser">
+						<img src="images/laser.jpg" alt="laser"/>
+						<a href="#" class="modal modal_laser">modal window</a>
+						<a href="#" class="detail">Подробнее</a>
+						<a href="#" class="laser_description">
+							<p class="name">Power Laser - 300mW</p>
+							<p class="price">4 590 Р</p>
+						</a>
+					</div>
+				</div>
+			</li>
+			<li class="no_dropdown"><a href="#">Аксессуары</a></li>
+			<li class="no_dropdown"><a href="#contacts" class="to_scroll">Контакты</a></li>
+		</ul>
+	</div>
+</nav>
+<div class="item_media">
+	<div class="container">
+		<p class="page_title">ЗЕЛЕНАЯ ЛАЗЕРНАЯ УКАЗКА POWER 303 МОЩНОСТЬЮ 300мВт</p>
+		<p class="page_subtitle">Мощый, компактный, универсальный. Зарядное устройство и аккумулятор в комплекте. Жгет спички.</p>
+		<div class="item_photo">
+			<img src="images/laser_photo_1.jpg" alt="large_photo" class="large_photo" id="large_photo"/>
+			<img src="images/laser_photo_1.jpg" alt="one_photo" class="one_photo"/>
+			<img src="images/laser_photo_2.jpg" alt="one_photo" class="one_photo"/>
+			<img src="images/laser_photo_3.jpg" alt="one_photo" class="one_photo"/>
+			<img src="images/laser_photo_4.jpg" alt="one_photo" class="one_photo"/>
+		</div>
+		<div class="item_form_and_button">
+			<div class="item_form">
+				<div class="form_info">
+					<p class="item_price" id="item_price">2790</p>
+					<p class="item_some_info">Здесь можно написать что-то полезное для пользователя</p>
+				</div>
+				<form action="php/form.php" class="send_order closed" method="post">
+					<p id="accessories">Добавить аксессуары</p>
+					<ul>
+						<li>
+							<label for="checkbox1" data-price="350">Аккумулятор * 1 шт (+350 Р)</label>
+							<input id='checkbox1' type="checkbox" name="battery"/>
+						</li>
+						<li>
+							<label for="checkbox2" data-price="550">Штатив * 1 шт (+550 Р)</label>
+							<input id='checkbox2' type="checkbox" name="tripod"/>
+						</li>
+						<li>
+							<label for="checkbox3" data-price="500">Очки защит * 1 шт (+500 Р)</label>
+							<input id='checkbox3' type="checkbox" name="goggles"/>
+						</li>
+						<li>
+							<label for="checkbox4" data-price="800">Расширители * 1 шт (+800 Р)</label>
+							<input id='checkbox4' type="checkbox" name="expanders"/>
+						</li>
+					</ul>
+					<input type="text" value="ЗЕЛЕНАЯ ЛАЗЕРНАЯ УКАЗКА POWER 303 МОЩНОСТЬЮ 300мВт" class="hidden_input" name="item_name" />
+					<input type="text" value="2790" class="hidden_input" name="original_price" />
+					<input type="text" value="2790" class="hidden_input" id="total_cost" name="total_cost" />
+					<input type="submit" value="Купить"/>
+				</form>
+			</div>
+			<div class="item_buttons">
+				<p class="one_item_button delivery">Доставка<span>Всплывающая подсказка доставки</span></p>
+				<p class="one_item_button payment">Оплата<span>Всплывающая подсказка оплаты</span></p>
+				<p class="one_item_button warranty">Гарантия<span>Всплывающая подсказка гарантии</span></p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="specification">
+	<div class="container">
+		<div class="item_description">
+			<p class="item_description_header">Заголовок</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, quibusdam, soluta repudiandae nam ipsum velit earum doloribus libero fugit culpa repellat quis suscipit tempore amet eum sunt aliquid quo sint.</p>
+			<p class="item_description_header">Заголовок</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, quibusdam, soluta repudiandae nam ipsum velit earum doloribus libero fugit culpa repellat quis suscipit tempore amet eum sunt aliquid quo sint.</p>
+			<p class="item_description_header">Заголовок</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, quibusdam, soluta repudiandae nam ipsum velit earum doloribus libero fugit culpa repellat quis suscipit tempore amet eum sunt aliquid quo sint.</p>
+		</div>
+		<div class="item_technical">
+			<p>Технические характеристики</p>
+			<table>
+				<tbody>
+					<tr>
+						<td>Заголовок</td>
+						<td>Значение</td>
+					</tr>
+					<tr>
+						<td>Заголовок</td>
+						<td>Значение</td>
+					</tr>
+					<tr>
+						<td>Заголовок</td>
+						<td>Значение</td>
+					</tr>
+					<tr>
+						<td>Заголовок</td>
+						<td>Значение</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<div class="video">
+	<div class="container">
+		<iframe class="item_iframe" width="570" height="321" src="http://www.youtube.com/embed/7dJPldxV3iM?rel=0" frameborder="0" allowfullscreen></iframe>
+		<form action="php/ask.php" class="send_order">
+			<p>Оставьте заявку на этот лазер:</p>
+			<input name="name" type="text" placeholder="Имя"/>
+			<input name="phone" type="text" placeholder="Телефон"/>
+			<textarea name="message" placeholder="Сообщение"></textarea>
+			<input type="submit"/>
+		</form>
+	</div>
+</div>
+<div class="comments">
+	<div class="container">
+		<div class="slider_control arr_left" id="arr_left"></div>
+		<div class="slider_control arr_right" id="arr_right"></div>
+		<p class="header">Отзывы наших покупателей:</p>
+		<div class="carousel" id="carousel">
+			<div class="one_comment">
+				<img src="images/comment_author.png" alt="comment author"/>
+				<div class="comment_text">
+					<p class="who_comment">Иван1, Москва</p>
+					<p class="comment">Доставка не подкачала, получил лазер как и обещали через 2 дня теперь когда каждый из нас может достичь таких высот, я выбираю этот и имено этот лазер для каждого из нас и более того, в век таких возможностей и при соблюдении морали я делаю выбор и оставляю свое мнение за!</p>
+				</div>
+			</div>
+			<div class="one_comment">
+				<img src="images/comment_author.png" alt="comment author"/>
+				<div class="comment_text">
+					<p class="who_comment">Иван2, Москва</p>
+					<p class="comment">Доставка не подкачала, получил лазер как и обещали через 2 дня теперь когда каждый из нас может достичь таких высот, я выбираю этот и имено этот лазер для каждого из нас и более того, в век таких возможностей и при соблюдении морали я делаю выбор и оставляю свое мнение за!</p>
+				</div>
+			</div>
+			<div class="one_comment">
+				<img src="images/comment_author.png" alt="comment author"/>
+				<div class="comment_text">
+					<p class="who_comment">Иван3, Москва</p>
+					<p class="comment">Доставка не подкачала, получил лазер как и обещали через 2 дня теперь когда каждый из нас может достичь таких высот, я выбираю этот и имено этот лазер для каждого из нас и более того, в век таких возможностей и при соблюдении морали я делаю выбор и оставляю свое мнение за!</p>
+				</div>
+			</div>
+			<div class="one_comment">
+				<img src="images/comment_author.png" alt="comment author"/>
+				<div class="comment_text">
+					<p class="who_comment">Иван4, Москва</p>
+					<p class="comment">Доставка не подкачала, получил лазер как и обещали через 2 дня теперь когда каждый из нас может достичь таких высот, я выбираю этот и имено этот лазер для каждого из нас и более того, в век таких возможностей и при соблюдении морали я делаю выбор и оставляю свое мнение за!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="vk">
+	<div class="container">
+		<img src="images/vk.jpg" alt="vkontakte" class="vkontakte"/>
+	</div>
+</div>
+<div class="feedback item_feedback" id="contacts">
+	<div class="container">
+		<div class="phone_info">
+			<p>Бесплатный телефон для звонков по всей России:</p>
+			<p class="phone">8(800)555-41-80</p>
+		</div>
+		<p class="mail_info">Эл. почта: info@dragonlasers.ru</p>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<div class="footer_catalog">
+			<div class="one_catalog">
+				<p class="name_catalog">Зеленые</p>
+				<ul>
+					<li><a href="#">Pointer 50mW</a></li>
+					<li><a href="#">Power 300mW</a></li>
+					<li><a href="#">Power 500mW</a></li>
+					<li><a href="#">Strong 1000mW</a></li>
+					<li><a href="#">Strong 2000mW</a></li>
+				</ul>
+			</div>
+			<div class="one_catalog">
+				<p class="name_catalog">Синие</p>
+				<ul>
+					<li><a href="#">Pointer 50mW</a></li>
+					<li><a href="#">Power 300mW</a></li>
+					<li><a href="#">Power 500mW</a></li>
+				</ul>
+			</div>
+			<div class="one_catalog">
+				<p class="name_catalog">Красные</p>
+				<ul>
+					<li><a href="#">Pointer 50mW</a></li>
+					<li><a href="#">Power 300mW</a></li>
+				</ul>
+			</div>
+			<div class="one_catalog">
+				<p class="name_catalog">Аксессуары</p>
+				<ul>
+					<li><a href="#">Штатив</a></li>
+					<li><a href="#">Штатив серии Х</a></li>
+					<li><a href="#">Аккум 16340</a></li>
+					<li><a href="#">Аккум 18650</a></li>
+					<li><a href="#">Очки</a></li>
+				</ul>
+				<ul>
+					<li><a href="#">Еще очки</a></li>
+					<li><a href="#">Призма</a></li>
+					<li><a href="#">Линза 50 мм</a></li>
+					<li><a href="#">Линза 100 мм</a></li>
+					<li><a href="#">Чехол в асс.</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer_info">
+			<a href="index.html" class="logo">
+				<img src="images/logo.png" alt="logo"/>
+			</a>
+			<div class="text_info">
+				<p>Интернет-магазин по продаже лазерных указкок с доставкой по всей России. © 2006–2014, «Тинькофф Кредитные Системы» Банк (ЗАО), официальный сайт, лицензия ЦБ РФ № 2673. </p>
+				<p>Обращаем ваше внимание на то, что данный интернет-сайт носит исключительно информационный характер и не является публичной офертой.</p>
+			</div>
+			<div class="social">
+				<div class="social_groups">
+					<a href="#" class="one_social_group fb"><i class="icon-facebook"></i></a>
+					<a href="#" class="one_social_group tw"><i class="icon-twitter"></i></a>
+					<a href="#" class="one_social_group vk"><i class="icon-vk"></i></a>
+					<a href="#" class="one_social_group gp"><i class="icon-gplus"></i></a>
+					<a href="#" class="one_social_group in"><i class="icon-instagramm"></i></a>
+					<a href="#" class="one_social_group ya"><i class="icon-yandex"></i></a>
+				</div>
+				<div class="payment_methods">
+					<a href="#" class="one_payment_method visa"><i class="icon-visa"></i></a>
+					<a href="#" class="one_payment_method master"><i class="icon-mastercard"></i></a>
+					<a href="#" class="one_payment_method secure"><i class="icon-visa"></i></a>
+					<a href="#" class="one_payment_method verified"><i class="icon-visa"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+</body>
+</html>
